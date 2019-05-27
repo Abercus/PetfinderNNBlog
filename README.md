@@ -264,7 +264,13 @@ The network was also tested with various datasets that were generated using enco
 [Kaggle](https://www.kaggle.com/c/petfinder-adoption-prediction/overview/evaluation) scores submissions based on the quadratic weighted kappa, which measures the agreement between two ratings.
 From [Kaggle](https://www.kaggle.com/c/petfinder-adoption-prediction/overview/evaluation): if metric is near 0, it indicates that there is random agreement between raters and if near to 1, there is a complete agreement between rates. Even more, if there is  is less agreement between the raters than expected by chance, the metric can be negative.
 
+## Images CNN 
+Images CNN was trained for four epochs with train size of 0.8. This resulted in quadratic weighted kappa of 0.295 on training and 0.239 on test set. Accuracy was correspondingly 0.386 and 0.352. Testing it on Kaggle resulted in quadratic weighted kappa of 0.230.
+Although this score was achieved with four runs, we have tested it on more than four epochs, but in overall this resulted in overfitting and kappa score under 0.2 on Kaggle.
 
+![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/cnnfig1.png)
+
+Figure. Images CNN training time loss and accuracy change.It can be seen that on the fourth epoch (third, if counting from 0), loss starts to increase on validation set.
 
 
 ### Remove:
