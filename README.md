@@ -169,7 +169,7 @@ Several new features were generated from the raw data to extract information tha
 3. **Is the given state popular**. There were two Malaysian states in the dataset (namely ...) where most of the pets were adopted from. This feature is boolean, the value True indicating that the sample’s state is either of the two popular states and False indicating otherwise.
 
 ### Network architectures
-## Images CNN
+## [Images CNN](https://github.com/PriitPaluoja/PetFinderNN/blob/master/ImagesCNN.ipynb)
 Images CNN uses transfer learning. Pre-trained [Xception](https://arxiv.org/abs/1610.02357) model is used with  ImageNet weights. All layers except last 3 layers of the Xception  model are frozen during training. Auxiliary input from training.csv and sentiments is given and sent through 4 hidden layers and merged (merged layer) with the output of the Xception.
 
 The following features are given from auxiliary input:
@@ -203,7 +203,7 @@ The merged layer is further followed by two hidden layers. Final hidden layer of
 
 Figure. ImageCNN architecture
 
-**[ImageCNN code](https://github.com/PriitPaluoja/PetFinderNN/blob/master/ImagesCNN.ipynb)**
+**ImageCNN code**
 
 ```python
 transfer = Xception(weights='imagenet', include_top=False, input_shape=(height, width, 3))
@@ -280,6 +280,28 @@ Maybe if one would remove used stop words use other natural language processing 
 ![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/cnnfig2.jpg)
 
 Figure. Images CNN + pre-trained word embeddings loss and accuracy during different epochs. It can be seen that while on training data loss is decreasing and accuracy increasing, on the validation set, everything is the opposite. This is a sign of overfitting.
+
+## Random Forest classifier (RFC) 
+With number of estimators being 70, random forest return kappa score of 0.33 on test set and accuracy of 0.99 and 0.40 on training and test set. With number of estimators being 65 and max depth of 15, Kaggle kappa score was 0.214. 
+We also tried random forest hyperparameters found from [public Kaggle kernel](https://www.kaggle.com/dan3dewey/baseline-random-forest-with-get-class-bounds). These were: 
+- Bootstrap
+- Gini 
+- Max depth of 80
+- Auto max features
+- Min samples for leaf: 5
+- Min samples for split: 5
+- Number of estimators: 200
+
+This resulted in Kaggle kappa of 0.240.
+
+
+
+
+
+
+
+
+
 
 ### Remove:
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
