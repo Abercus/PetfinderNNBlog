@@ -153,9 +153,14 @@ In this case, a document comprised all of the descriptions in the given category
 
 The 10 best features were selected from every category and used as features. The feature values were calculated as the number of times the word appeared in the given description. 
 
+## Encoding Methods
+There are many well-known methods for feature engineering which involve encoding the features in some specific way. The four methods that were used in this project are **mean encoding, count encoding, binning numerical data** and one-hot-encoding. Different combinations of features were tested with the encoding methods. 
 
+**Mean or target encoding** involves encoding a categorical value with its ratio to the target variable. That is, in a binary classification task every categorical value _x_ in a feature _f_ is replaced with the percentage of samples in which the target class is 1 and the f value is _x_ among all the samples where _f = x_. As there are _5_ classes instead of _2_ in this particular task, then if mean encoding is applied to feature _f_, the columns _f_AdoptionSpeed0, f_AdoptionSpeed1, … , f_AdoptionSpeed4_ are generated, each containing the encoding of a feature for the particular value of the category. 
 
+**Count encoding** a feature involves replacing every feature value with its count. 
 
+Numerical data can either be normalized or **binned** to some intervals, which helps eliminate useless noise and could reveal important tendencies that were hidden due to the noise. 
 
 
 ### Remove:
