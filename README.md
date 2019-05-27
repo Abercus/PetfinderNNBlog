@@ -175,7 +175,7 @@ AdpSpeed | 0 | 1 | 2 | 3 | 4
 Avg Fee |22.086|21.822|21.582|20.151|21.315 
 
 ## Baseline modeling
-To evaluate how useful our neural networks are, we compared them to some baseline models, namely the **Random Forest classifier** (RFC) and **Gaussian Naïve Bayes** (GNB). RFC was selected because of its speed and good performance in many machine learning tasks, while GNB is a good probabilistic baseline for...  RFC performed the best on the raw … data and thus, was selected as the baseline method for further tests. 
+To evaluate how useful our neural networks are, we compared them to some baseline models, namely the **Random Forest classifier** (RFC), **Extreme Gradient Boosting** (XGB) and **Gaussian Naïve Bayes** (GNB). RFC was selected because of its speed and good performance in many machine learning tasks, similary XGB has shown to be really performant in many tasks (especially on Kaggle), while GNB is a good probabilistic baseline for...  RFC performed the best on the raw … data and thus, was selected as the baseline method for further tests. 
 
 The sklearn implementations of both methods were used in this project. We tested various values of the _n_estimators_ and _max_depth_ parameters, the first specifying the number of trees in the forest and the second setting the maximum depth of a tree in the forest. According to the test cohen-kappa score, accuracy and cross-validation accuracy we found the best _n_estimators_ to be 60 and _max_depth_ 15. These are kept constant through the rest of the project. 
 
@@ -191,7 +191,7 @@ The intention is to use this metric to determine the most important words in the
 
 There are different variants of the formula, the ones used in this project are the following:
 ….
-https://nlp.stanford.edu/IR-book/html/htmledition/maximum-tf-normalization-1.html https://skymind.ai/wiki/bagofwords-tf-idf
+https://nlp.stanford.edu/IR-book/html/htmledition/maximum-tf-normalization-1.html and https://skymind.ai/wiki/bagofwords-tf-idf
 
 The normalized variant of the TF formula was used with K = 0.5. 
 In this case, a document comprised all of the descriptions in the given category (adoption speed) and thus there were altogether 5 documents. The TF-IDF score was calculated for every word in a document to determine the words that best describe each adoption speed. To ease the process, different preprocessing methods were applied to the texts, including lemmatization and name extraction (i.e. eliminating names from texts). 
@@ -356,6 +356,15 @@ We also tried random forest hyperparameters found from [public Kaggle kernel](ht
 - Number of estimators: 200
 
 This resulted in Kaggle kappa of 0.240.
+
+### Extreme Gradient Boosting (XGB)
+By trying out different max_depths for each tree, we found depth of 6 to still give high result on kappa and test score and not overfit too much to training data set. On test-train split, the Kappa score achieved was 0.355, with the accuracy on train 0.691 and on test 0.416. 
+
+Differently from other tests, this made use of alternative TF-IDF encoding, described in **Alternative application of TF-IDF**. 
+
+On Kaggle, the submission got a Kappa result of **0.29109**.
+
+
 
 ### Images CNN + TF-IDF
 ...
