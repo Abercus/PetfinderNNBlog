@@ -8,11 +8,18 @@ The first step is to try and understand the data we are working with. For this w
 
 PetFinder.my provides 14,993 samples for training, where each sample has 24 features + n images (depict a dog or a cat) + metadata + sentiment info. There are a total of 58,311 images per training set, where some images (see Image 1) illustrate multiple animals.
 
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+Image 1. Example of the case, where one image file has multiple images of the animal.
+
+Provided by the competition holder are following files: 
+- _train.csv_ - consists of training data, this is the set of data with target labels, which we can use to train our models on;
+- _test.csv_ - consists of test data, without target label, this will be used for Kaggle submission;
+- Image metadata files - set of json files, with output of image analysis provided by the contest holder; 
+- Sentiment data files - set of json files, with output of sentiment analysis on _Description_ field.
 
 
-
-
-
+Additionally there are files to map integer values within _train.csv_ which represent categories to strings: _breed_labels.csv_ (BreedId to a name of the breed), _color_labels.csv_ (color id to a color), _state_labels.csv_ (state id to a state). 
 
 
 
