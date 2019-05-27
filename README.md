@@ -201,7 +201,7 @@ The merged layer is further followed by two hidden layers. Final hidden layer of
 
 This model is configured to use categorical cross entropy loss, learning rate of 0.001 with Adam optimizer. Model is set to train 4 epoch and save the best model only.
 
-![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/imagesCNN.png)
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/imagesCNN2.png)
 
 Figure. ImageCNN architecture
 
