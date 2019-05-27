@@ -123,6 +123,13 @@ Figure 11 plots the distribution of pet being dewormed (right) and adoption spee
 
 Most of the pets are do not have any fee.
 
+Looking at the average fee for each class, we can see that there is not much of a difference:
+
+AdpSpeed | 0 | 1 | 2 | 3 | 4 
+-----|-----|-----|-----|-----|----- 
+Avg Fee |22.086|21.822|21.582|20.151|21.315 
+
+
 ### Remove:
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
