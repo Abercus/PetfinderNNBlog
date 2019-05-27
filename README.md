@@ -197,15 +197,15 @@ From these features, the following are standardized: “Age”, “Fee”, “Qu
 
 The inputs for Xception, the images, were  rescaled to 100 x 100 and standardized.
 
-The merged layer is further followed by two hidden layers. Final hidden layer of size five uses softmax activation, while all the other hidden layers use ReLU.
-
-This model is configured to use categorical cross entropy loss, learning rate of 0.001 with Adam optimizer. Model is set to train 4 epoch and save the best model only.
+The merged layer is further followed by two hidden layers. Final hidden layer of size five uses softmax activation, while all the other hidden layers use ReLU. This model is configured to use categorical cross entropy loss, learning rate of 0.001 with Adam optimizer. Model is set to train 4 epoch and save the best model only.
 
 ![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/imagesCNN2.png)
 
 Figure. ImageCNN architecture
 
-```markdown
+**ImageCNN code**
+
+```python
 transfer = Xception(weights='imagenet', include_top=False, input_shape=(height, width, 3))
 
 # Freeze Xception
