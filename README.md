@@ -23,12 +23,30 @@ Additionally there are files to map integer values within _train.csv_ which repr
 
 
 
+In _train.csv_ the following features are included: 
+- PetID - ID representing a pet, this can be used to map sentiment analysis results and pet images to a specific pet;
+- AdoptionSpeed - This is the target label used for training and prediction, it takes an integer value between 0 to 4. **0** means the pet was adopted on the day of it being listed within their system, **1** means that the pet was adopted between within 1-7 days,**2** within 8-30 days, **3** within 31-90 days. **4** means that the pet was not adopted after 100 days of being listed;
+- Type - represents type of a pet, where 1 stands for Dog and 2 for Cat;
+- Name - represents name of a pet;
+- Age - pet’s age in months;
+- Breed1 - primary breed;
+- Breed2 - secondary breed, this is missing if pet is a purebred;
+- Gender - pet’s gender, where 1 is Male, 2 is Female and 3 is Mixed (because listing can include several pets);
+- Color1-3 - Colors of pets;
+- MaturitySize - pet’s size, where 0 means is unspecified, 1 stands for a small pet, 2 for medium, 3 for large and 4 for extra large;
+- FurLength - pet’s fur length, 0 is not specified, 1 is short, 2 is medium and 3 is long;
+- Vaccinated - pet’s vaccination status, 1 means vaccinated, 2 unvaccinated and 3 means unsure;
+- Dewormed - pet’s deworm status, 1 means dewormed, 2 not dewormed and 3 unsure;
+- Sterilized - pet’s sterilization status, where 1 means spayed / neutered, 2 not spayed / neutered  and 3 unsure;
+- Health - pet’s health condition, where 1 is healthy, 2 minor injuries,  3 serious injuries and 4 not specified;
+- Quantity - count of pets within the listing;
+- Fee - pet’s adoption fee, where 0 is free;
+- State - state within country of Malaysia;
+- RescuerID - rescuer’s ID;
+- VideoAmt - count of videos within listing;
+- PhotoAmt - count of photos within listing;
+- Description - free-form text for describing the pet / listing.
 
-
-
-You can use the [editor on GitHub](https://github.com/Abercus/PetfinderNNBlog/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 
 
@@ -62,3 +80,11 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+
+
+You can use the [editor on GitHub](https://github.com/Abercus/PetfinderNNBlog/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+
+
