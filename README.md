@@ -247,6 +247,26 @@ history = model.fit([X_train_img, X_train_else],
 
 ```
 
+## Images CNN + Pre-Trained Word Embeddings
+We also tried adding more features. For that we downloaded [fastText](https://fasttext.cc/docs/en/english-vectors.html) pre-trained word embeddings. More precisely, we used their (T. Mikolov, E. Grave, P. Bojanowski, C. Puhrsch, A. Joulin. Advances in Pre-Training Distributed Word Representations) 1 million word vectors trained on Wikipedia 2017, UMBC web based corpus and statmt.org news dataset.
+Next, for each sentence in sentiments data file per animal, we mapped word to pre-trained word vector and summed the vectors over sentence and added these features (each word vector was 300 units long) to the initial auxiliary input. This resulted 300 extra features per animal. 
+
+## Only Images
+Several network architectures were tested with only image data, using convolutional, dropout and fully connected layers. Different learning rates and optimizers were tested and the images were  rescaled to 100 x 100 and standardized. 
+ 
+## Images CNN + TF-IDF
+After giving promising results, the Images CNN network was also used with the TF-IDF data. The three last layers of the Xception model were left unfrozen and 3-5 additional fully connected layers were tested. 
+
+## Images CNN + Encoding Methods
+The network was also tested with various datasets that were generated using encoding methods on different sets of variables. Three last layers of the Xception model were left trainable while 4-5 additional fully connected layers were added. 
+
+### Evaluation
+[Kaggle](https://www.kaggle.com/c/petfinder-adoption-prediction/overview/evaluation) scores submissions based on the quadratic weighted kappa, which measures the agreement between two ratings.
+From [Kaggle](https://www.kaggle.com/c/petfinder-adoption-prediction/overview/evaluation): if metric is near 0, it indicates that there is random agreement between raters and if near to 1, there is a complete agreement between rates. Even more, if there is  is less agreement between the raters than expected by chance, the metric can be negative.
+
+
+
+
 ### Remove:
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
