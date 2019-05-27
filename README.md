@@ -73,8 +73,8 @@ Plotted on Figure 3 is the number of pets adopted per day timeframes. By dividin
 
 
 <p float="left">
-  <img src="pics_blog/type_2.png" width="350" /> 
-  <img src="pics_blog/type_1.png" width="350" />
+  <img src="pics_blog/type_2.png" width="400" /> 
+  <img src="pics_blog/type_1.png" width="400" />
 </p>
 Figure 4. Distributions of AdoptionSpeeds for dogs and cats separately and Figure 5. Counts of dogs (1) and cats (2) within the training dataset.
 
