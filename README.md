@@ -148,7 +148,7 @@ Figure 12 plots the distribution of pet being vaccinated (right), unvaccinated o
 </p>
 Figure 13. Feature state.
 
-We can see that most of the listing are from two different states. 
+On Figure 13 we can see that most of the listings are done in one of two different states. 
 
 <p float="left">
   <img src="pics_blog/age.png" width="400" />
