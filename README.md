@@ -61,8 +61,67 @@ From the features within _train.csv_, we found that there were 1257 missing valu
 To better know what’s going on in the data, we performed visualized the distributions of features. We plot the distribution of the features individually and then also look at the distributions by _AdoptionSpeed_ (target). On Figure 2 is plotted the target variable _AdoptionSpeed_.  We first note, that the class of pets adopted within the day of listing is considerably smaller (under 500) compared to every other class (over 3000 to 4200). 
 
 ![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
 Figure 2. Distribution of target variable AdoptionSpeed.
 
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+Figure 3. Average number of pets adopted per day within timeframe.
+
+Plotted on Figure 3 is the number of pets adopted per day timeframes. By dividing the number of pets with the size of timeframe (number of days), we can find how many pets were adopted on average on each day. We note that most adoptions happen during the first week of the listing. As time goes on, the number of adoptions per day gets lower.
+
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+Figure 4. Counts of dogs (1) and cats (2) within the training dataset.
+
+Plotted on Figure 4 is the number of dogs and cats, we can see that the counts of dogs and cats are pretty close, with there being some more dogs than cats.
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+Figure 5. Distributions of AdoptionSpeeds for dogs and cats separately.
+
+Plotted on Figure 5 are normalized distributions of the target label counts for dogs (1) and cats (2), where we can see that cats are more likely to be adopted and are adopted earlier. 
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+Figure 6. Distributions of AdoptionSpeeds and counts of Sterilization status. 1 is spayed / neutered, 2 is not spayed/neutered and 3 means unsure. We can see, that most of the pets are listed as not sterilized, which can be due to costs and additional work needed to be done. From data, oddly enough, it seems that the the non-spayed pets have higher adoption rate compared to sterilized ones.
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+Figure 7. 1 - small, 2 - medium, 3 - large, 4 - extra large
+
+We note that most of the pets are medium size and and almost none are extra large. From the distributions, we can note that people prefer to adopt either small or extra large pets, with medium and large being more neglected.
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+Figure 8. 1 - short, 2 - medium, 3 - long, 4 - not specified. 
+
+We note that most pets have short fur and least with long fur. From the distributions of AdoptionSpeed we note that people prefer pets with long fur. Medium fur pets are slightly more adopted compared to short fur. There were no pets with unspecified fur length within the data set.  
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+Figure 9. 1- Male, 2 - Female, 3 - Mixed
+
+Figure 9 plots the distribution of gender (right) and adoption speed distributions per gender (left). In the training data, there are more female than male dogs. Looking at the distribution of adoption speeds we can see that male pets are slightly more preferred to female pets.
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+Figure 10 plots the distribution of health status (right) and adoption speed distributions per health status (left). We note that most of the pets in the data set are healthy (1), with few having minor injuries (2) and only small with major injuries. We can note, that injured pets are less likely to be adopted.
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+Figure 11 plots the distribution of pet being dewormed (right) and adoption speed distributions for each dewormed status. Most of the pets are dewormed (1), but there is also plenty which are either not dewormed (2) or not specified (3). We can actually 
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+
+Most of the pets are do not have any fee.
 
 ### Remove:
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
