@@ -60,11 +60,15 @@ From the features within _train.csv_, we found that there were 1257 missing valu
 ### Investigating feature distributions
 To better know what’s going on in the data, we performed visualized the distributions of features. We plot the distribution of the features individually and then also look at the distributions by _AdoptionSpeed_ (target). On Figure 2 is plotted the target variable _AdoptionSpeed_.  We first note, that the class of pets adopted within the day of listing is considerably smaller (under 500) compared to every other class (over 3000 to 4200). 
 
-![Image](pics_blog/adoption_1.png)
+<p float="left">
+  <img src="pics_blog/adoption_1.png" width="400" /> 
+</p>
 
 Figure 2. Distribution of target variable AdoptionSpeed.
 
-![Image](pics_blog/adoption_2.png)
+<p float="left">
+  <img src="pics_blog/adoption_2.png" width="400" /> 
+</p>
 
 Figure 3. Average number of pets adopted per day within timeframe.
 
