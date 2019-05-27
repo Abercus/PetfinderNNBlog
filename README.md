@@ -60,32 +60,35 @@ From the features within _train.csv_, we found that there were 1257 missing valu
 ### Investigating feature distributions
 To better know what’s going on in the data, we performed visualized the distributions of features. We plot the distribution of the features individually and then also look at the distributions by _AdoptionSpeed_ (target). On Figure 2 is plotted the target variable _AdoptionSpeed_.  We first note, that the class of pets adopted within the day of listing is considerably smaller (under 500) compared to every other class (over 3000 to 4200). 
 
-![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+![Image](pics_blog/adoption_1.png)
 
 Figure 2. Distribution of target variable AdoptionSpeed.
 
-![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+![Image](pics_blog/adoption_2.png)
 
 Figure 3. Average number of pets adopted per day within timeframe.
 
 Plotted on Figure 3 is the number of pets adopted per day timeframes. By dividing the number of pets with the size of timeframe (number of days), we can find how many pets were adopted on average on each day. We note that most adoptions happen during the first week of the listing. As time goes on, the number of adoptions per day gets lower.
 
-
-![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+![Image](pics_blog/type_1.png)
 
 Figure 4. Counts of dogs (1) and cats (2) within the training dataset.
 
-Plotted on Figure 4 is the number of dogs and cats, we can see that the counts of dogs and cats are pretty close, with there being some more dogs than cats.
-
-![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+![Image](pics_blog/type_2.png)
 
 Figure 5. Distributions of AdoptionSpeeds for dogs and cats separately.
 
-Plotted on Figure 5 are normalized distributions of the target label counts for dogs (1) and cats (2), where we can see that cats are more likely to be adopted and are adopted earlier. 
 
-![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+Plotted on Figure 4 is the number of dogs and cats, we can see that the counts of dogs and cats are pretty close, with there being some more dogs than cats. Plotted on Figure 5 are normalized distributions of the target label counts for dogs (1) and cats (2), where we can see that cats are more likely to be adopted and are adopted earlier. 
 
-Figure 6. Distributions of AdoptionSpeeds and counts of Sterilization status. 1 is spayed / neutered, 2 is not spayed/neutered and 3 means unsure. We can see, that most of the pets are listed as not sterilized, which can be due to costs and additional work needed to be done. From data, oddly enough, it seems that the the non-spayed pets have higher adoption rate compared to sterilized ones.
+<p float="left">
+  <img src="pics_blog/sterilized_1.png" width="350" />
+  <img src="pics_blog/sterilized_2.png" width="350" /> 
+</p>
+
+Figure 6. Distributions of AdoptionSpeeds and counts of Sterilization status. 1 is spayed / neutered, 2 is not spayed/neutered and 3 means unsure. 
+
+We can see, that most of the pets are listed as not sterilized, which can be due to costs and additional work needed to be done. From data, oddly enough, it seems that the the non-spayed pets have higher adoption rate compared to sterilized ones.
 
 ![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
 
@@ -249,7 +252,8 @@ history = model.fit([X_train_img, X_train_else],
 
 ### [Images CNN + Pre-Trained Word Embeddings](https://github.com/PriitPaluoja/PetFinderNN/blob/master/ImagesCNNEmbedVect.ipynb)
 We also tried adding more features. For that we downloaded [fastText](https://fasttext.cc/docs/en/english-vectors.html) pre-trained word embeddings. More precisely, we used their (T. Mikolov, E. Grave, P. Bojanowski, C. Puhrsch, A. Joulin. Advances in Pre-Training Distributed Word Representations) 1 million word vectors trained on Wikipedia 2017, UMBC web based corpus and statmt.org news dataset.
-Next, for each sentence in sentiments data file per animal, we mapped word to pre-trained word vector and summed the vectors over sentence and added these features (each word vector was 300 units long) to the initial auxiliary input. This resulted 300 extra features per animal. 
+Next, for each sentence in sentiments data file per animal, we mapped word to pre-trained word vector and summed the vectors over sentence and added these features (each word vector was 300 units long) to the initial auxiliary input. This resulted 
+extra features per animal. 
 
 ### Only Images
 Several network architectures were tested with only image data, using convolutional, dropout and fully connected layers. Different learning rates and optimizers were tested and the images were  rescaled to 100 x 100 and standardized. 
