@@ -162,6 +162,12 @@ There are many well-known methods for feature engineering which involve encoding
 
 Numerical data can either be normalized or **binned** to some intervals, which helps eliminate useless noise and could reveal important tendencies that were hidden due to the noise. 
 
+## Other Features
+Several new features were generated from the raw data to extract information that could be important to the classifier. These features are listed below.
+1. **The number of colors**. For each pet we calculate the number of colors in their fur. 
+2. **The number of breeds**. The number of breeds are calculated for every pet.
+3. **Is the given state popular**. There were two Malaysian states in the dataset (namely ...) where most of the pets were adopted from. This feature is boolean, the value True indicating that the sample’s state is either of the two popular states and False indicating otherwise.
+
 
 ### Remove:
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
