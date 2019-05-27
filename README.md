@@ -129,6 +129,23 @@ AdpSpeed | 0 | 1 | 2 | 3 | 4
 -----|-----|-----|-----|-----|----- 
 Avg Fee |22.086|21.822|21.582|20.151|21.315 
 
+### Baseline modeling
+To evaluate how useful our neural networks are, we compared them to some baseline models, namely the **Random Forest classifier** (RFC) and **Gaussian Naïve Bayes** (GNB). RFC was selected because of its speed and good performance in many machine learning tasks, while GNB is a good probabilistic baseline for...  RFC performed the best on the raw … data and thus, was selected as the baseline method for further tests. 
+
+The sklearn implementations of both methods were used in this project. We tested various values of the _n_estimators_ and _max_depth_ parameters, the first specifying the number of trees in the forest and the second setting the maximum depth of a tree in the forest. According to the test cohen-kappa score, accuracy and cross-validation accuracy we found the best _n_estimators_ to be 60 and _max_depth_ 15. These are kept constant through the rest of the project. 
+
+In addition, we ran the data through the **SelectKBest** method before applying RFC, testing if feature selection would significantly improve the scores on … data so that we could eliminate some redundant features immediately. In the end, testing different _k_ values and scoring functions did not give notable differences in the results and thus only the RFC model was kept from the pipeline.
+
+
+
+
+
+
+
+
+
+
+
 
 ### Remove:
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
