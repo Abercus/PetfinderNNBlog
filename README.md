@@ -136,11 +136,22 @@ The sklearn implementations of both methods were used in this project. We tested
 
 In addition, we ran the data through the **SelectKBest** method before applying RFC, testing if feature selection would significantly improve the scores on … data so that we could eliminate some redundant features immediately. In the end, testing different _k_ values and scoring functions did not give notable differences in the results and thus only the RFC model was kept from the pipeline.
 
+### Feature engineering
+From our initial tests it quickly became clear that only using some basic techniques like normalization and one-hot-encoding would not give us good results. Therefore, we implemented various feature engineering methods to extract more useful information from the given data.
 
+## TF-IDF
+TF-IDF is a metric to evaluate the significance of a word in some document which belongs to a group of documents. TF-IDF considers both the frequency of the word in the particular document (TF, term frequency) and the inverse document frequency (IDF) which decreases the importance of words that frequently appear in all documents (e.g very common words, like articles). 
 
+The intention is to use this metric to determine the most important words in the pet descriptions for every adoption speed category. If there even exists a small set of words that represent a specific category, it could provide useful information to help differentiate the samples of different categories.
 
+There are different variants of the formula, the ones used in this project are the following:
+….
+https://nlp.stanford.edu/IR-book/html/htmledition/maximum-tf-normalization-1.html https://skymind.ai/wiki/bagofwords-tf-idf
 
+The normalized variant of the TF formula was used with K = 0.5. 
+In this case, a document comprised all of the descriptions in the given category (adoption speed) and thus there were altogether 5 documents. The TF-IDF score was calculated for every word in a document to determine the words that best describe each adoption speed. To ease the process, different preprocessing methods were applied to the texts, including lemmatization and name extraction (i.e. eliminating names from texts). 
 
+The 10 best features were selected from every category and used as features. The feature values were calculated as the number of times the word appeared in the given description. 
 
 
 
