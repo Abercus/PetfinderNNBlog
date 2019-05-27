@@ -205,6 +205,47 @@ This model is configured to use categorical cross entropy loss, learning rate of
 
 Figure. ImageCNN architecture
 
+```markdown
+transfer = Xception(weights='imagenet', include_top=False, input_shape=(height, width, 3))
+
+# Freeze Xception
+for layer in transfer.layers[:-3]:
+    layer.trainable = False
+
+# Inputs
+image_input = Input(shape=(height, width, 3))
+aux_input = Input(shape=(len(list(X_train_else)),))
+
+# Images:
+transfer = transfer(image_input)
+flatten = Flatten()(transfer)
+
+# Aux input:
+x = Dense(250, activation='relu')(aux_input)
+x = Dense(350, activation='relu')(x)
+x = Dense(450, activation='relu')(x)
+x = Dense(700, activation='relu')(x)
+
+# Merged:
+merge = concatenate([flatten, x])
+x = Dense(100, activation='relu')(merge)
+h = Dense(5, activation='relu')(x)
+
+# Predictions:
+predictions = Activation('softmax')(h)
+
+model = Model(inputs=[image_input, aux_input], outputs=predictions)
+model.compile(optimizer=Adam(lr=0.001), loss='categorical_crossentropy', metrics=['accuracy'])
+
+
+history = model.fit([X_train_img, X_train_else], 
+                    keras.utils.to_categorical(y_train),
+                    batch_size=BATCH_SIZE, 
+                    epochs=4, 
+                    validation_split=0.1,
+                    callbacks=[ModelCheckpoint('test_model.h5', save_best_only=True)])
+
+```
 
 ### Remove:
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
