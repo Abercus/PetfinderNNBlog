@@ -168,6 +168,43 @@ Several new features were generated from the raw data to extract information tha
 2. **The number of breeds**. The number of breeds are calculated for every pet.
 3. **Is the given state popular**. There were two Malaysian states in the dataset (namely ...) where most of the pets were adopted from. This feature is boolean, the value True indicating that the sample’s state is either of the two popular states and False indicating otherwise.
 
+### Network architectures
+## Images CNN
+Images CNN uses transfer learning. Pre-trained [Xception](https://arxiv.org/abs/1610.02357) model is used with  ImageNet weights. All layers except last 3 layers of the Xception  model are frozen during training. Auxiliary input from training.csv and sentiments is given and sent through 4 hidden layers and merged (merged layer) with the output of the Xception.
+
+The following features are given from auxiliary input:
+- “Type”
+- “Gender”
+- “Color1”
+- “Color2”
+- “Color3”
+- “MaturitySize”
+- “FurLength” 
+- “Vaccinated”
+- “Dewormed”
+- “Sterilized”
+- “Health”
+- “State”
+- “MaturitySize”
+- “Age”
+- “Fee”
+- “Quantity”
+- “PhotoAmt”
+- “Magnitude”
+- “Score”
+
+From these features, the following are standardized: “Age”, “Fee”, “Quantity”, “PhotoAmt”. 
+
+The inputs for Xception, the images, were  rescaled to 100 x 100 and standardized.
+
+The merged layer is further followed by two hidden layers. Final hidden layer of size five uses softmax activation, while all the other hidden layers use ReLU.
+
+This model is configured to use categorical cross entropy loss, learning rate of 0.001 with Adam optimizer. Model is set to train 4 epoch and save the best model only.
+
+![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/imagesCNN.png)
+
+Figure. ImageCNN architecture
+
 
 ### Remove:
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
