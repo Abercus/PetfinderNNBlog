@@ -268,7 +268,7 @@ From [Kaggle](https://www.kaggle.com/c/petfinder-adoption-prediction/overview/ev
 Images CNN was trained for four epochs with train size of 0.8. This resulted in quadratic weighted kappa of 0.295 on training and 0.239 on test set. Accuracy was correspondingly 0.386 and 0.352. Testing it on Kaggle resulted in quadratic weighted kappa of 0.230.
 Although this score was achieved with four runs, we have tested it on more than four epochs, but in overall this resulted in overfitting and kappa score under 0.2 on Kaggle.
 
-![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/cnnfig1.png)
+![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/cnnfig1.jpg)
 
 Figure. Images CNN training time loss and accuracy change.It can be seen that on the fourth epoch (third, if counting from 0), loss starts to increase on validation set.
 
