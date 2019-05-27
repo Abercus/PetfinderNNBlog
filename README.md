@@ -8,7 +8,7 @@ The first step is to try and understand the data we are working with. For this w
 
 PetFinder.my provides 14,993 samples for training, where each sample has 24 features + n images (depict a dog or a cat) + metadata + sentiment info. There are a total of 58,311 images per training set, where some images (see Image 1) illustrate multiple animals.
 
-![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/00c19f4fa-1.jpg)
+![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/00c19f4fa-1.jpg)
 
 Image 1. Example of the case, where one image file has multiple images of the animal.
 
@@ -201,7 +201,7 @@ The merged layer is further followed by two hidden layers. Final hidden layer of
 
 This model is configured to use categorical cross entropy loss, learning rate of 0.001 with Adam optimizer. Model is set to train 4 epoch and save the best model only.
 
-![Image](https://github.com/Abercus/PetfinderNNBlog/blob/master/imagesCNN2.png)
+![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/imagesCNN2.png)
 
 Figure. ImageCNN architecture
 
