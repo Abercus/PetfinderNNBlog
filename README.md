@@ -48,6 +48,19 @@ In _train.csv_ the following features are included:
 - Description - free-form text for describing the pet / listing.
 
 
+Given by the contest holder is output data from sentiment analysis performed using Google's Natural Language API on field _Description_, and in the file there is a score and a magnitude for every sentence. Score is within a range of -1 to 1, with positive score indicating the positive nature of a sentence and negative indicating the opposite. The magnitude shows how strong the given sentiment is. Also provided is a summarized magnitude and score for the full text. Those are within zipped files _train_sentiment.zip_ and _test_sentiment.zip_.
+
+
+For images, the contest provides output data from running all the images through Google's Vision API, which provides Face Annotation, Label Annotation, Text Annotation and Image Properties, giving information on for example where pets are located on pictures and what do they seem to look like. Those are within zipped files _train_images.zip_ and _test_images.zip_.
+
+
+## Checking for missing values
+From the features within _train.csv_, we found that there were 1257 missing values for _Name_ and 12 missing values for _Description_.
+
+## Investigating feature distributions
+To better know what’s going on in the data, we performed visualized the distributions of features. We plot the distribution of the features individually and then also look at the distributions by _AdoptionSpeed_ (target). On Figure 2 is plotted the target variable _AdoptionSpeed_.  We first note, that the class of pets adopted within the day of listing is considerably smaller (under 500) compared to every other class (over 3000 to 4200). 
+
+
 
 
 
