@@ -203,7 +203,7 @@ The merged layer is further followed by two hidden layers. Final hidden layer of
 
 Figure. ImageCNN architecture
 
-**ImageCNN code**
+**[ImageCNN code](https://github.com/PriitPaluoja/PetFinderNN/blob/master/ImagesCNN.ipynb)**
 
 ```python
 transfer = Xception(weights='imagenet', include_top=False, input_shape=(height, width, 3))
@@ -247,7 +247,7 @@ history = model.fit([X_train_img, X_train_else],
 
 ```
 
-## Images CNN + Pre-Trained Word Embeddings
+## [Images CNN + Pre-Trained Word Embeddings](https://github.com/PriitPaluoja/PetFinderNN/blob/master/ImagesCNNEmbedVect.ipynb)
 We also tried adding more features. For that we downloaded [fastText](https://fasttext.cc/docs/en/english-vectors.html) pre-trained word embeddings. More precisely, we used their (T. Mikolov, E. Grave, P. Bojanowski, C. Puhrsch, A. Joulin. Advances in Pre-Training Distributed Word Representations) 1 million word vectors trained on Wikipedia 2017, UMBC web based corpus and statmt.org news dataset.
 Next, for each sentence in sentiments data file per animal, we mapped word to pre-trained word vector and summed the vectors over sentence and added these features (each word vector was 300 units long) to the initial auxiliary input. This resulted 300 extra features per animal. 
 
@@ -272,6 +272,14 @@ Although this score was achieved with four runs, we have tested it on more than 
 
 Figure. Images CNN training time loss and accuracy change.It can be seen that on the fourth epoch (third, if counting from 0), loss starts to increase on validation set.
 
+## Images CNN + Pre-Trained Word Embeddings
+Images CNN with pre-trained word embeddings was trained for 10 + 4 epochs. Kappa on training data was 0.485 and on test 0.203. Accuracy was 0.531 and 0.348 on training and test data. Kaggle evaluation returned us the kappa score of 0.159. It is interesting that adding more features returned 69% lower kappa than Images CNN without pre-trained word embeddings. 
+
+Maybe if one would remove used stop words use other natural language processing techniques such as removal of frequent words, it could enhance the results. In our case it seems that summing sentences word vectors leads to a overfitting.
+
+![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/cnnfig2.jpg)
+
+Figure. Images CNN + pre-trained word embeddings loss and accuracy during different epochs. It can be seen that while on training data loss is decreasing and accuracy increasing, on the validation set, everything is the opposite. This is a sign of overfitting.
 
 ### Remove:
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
