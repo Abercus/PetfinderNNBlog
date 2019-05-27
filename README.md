@@ -198,6 +198,23 @@ In this case, a document comprised all of the descriptions in the given category
 
 The 10 best features were selected from every category and used as features. The feature values were calculated as the number of times the word appeared in the given description. 
 
+### Alternative application of TF-IDF
+The second version of TF-IDF used by making use of from sci-kit learn's [TfidVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html). The ideas for preprocessing were applied from a [Guide](https://www.kaggle.com/adamschroeder/countvectorizer-tfidfvectorizer-predict-comments?fbclid=IwAR1dRU97Bn8Ldj6KMwMNn6Rm6HQJqMV9aTbQ0jtoqgywZWd_W7fIioDrpVc).
+
+After preprocessing the descriptions to not include any punctuation, numbers and by making it all lowercase, we transformed extracted the features. Max features were set to 500 by some trial and error. ngram_range, which sets the sizes of ngrams tested, was 1 to 3. max_df=0.95 shows that the considered ngrams are, which do not exist in over 95% of the documents, min_df=0.01, on the other hand, requires that ngrams exist at least in 1% of documents to be considered. The tfidf vectorizer was fit on train descriptions and the test descriptions were applied the same transformation.
+
+```python
+max_features = 500
+
+# Create TF-IDF for descriptions
+tfidf = TfidfVectorizer(tokenizer=tokenizer, stop_words='english', 
+                      max_features=max_features, ngram_range=(1,3),
+                       max_df=0.95, min_df=0.01)
+train_sparse_tfidf_texts = tfidf.fit_transform(texts_train)
+test_sparse_tfidf_texts = tfidf.transform(test_texts)
+
+```
+
 ### Encoding Methods
 There are many well-known methods for feature engineering which involve encoding the features in some specific way. The four methods that were used in this project are **mean encoding, count encoding, binning numerical data** and one-hot-encoding. Different combinations of features were tested with the encoding methods. 
 
