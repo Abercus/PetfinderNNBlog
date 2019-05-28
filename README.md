@@ -386,7 +386,7 @@ The following image depicts word clouds for the description of the five adoption
 
 We can see that the most prevalent words in all categories are similar, common words describing the pets. However, there is one word that particularly stands out for one particular category, namely ‘home’ for speed 0, and does not appear as important for others. TF-IDF analysis tried to find similar important words.
 
-We tried two versions of TF-IDF: with only words (1-grams) and with (1-3)-grams. Three models were tested with 1-grams: with 3, 4 or 5 additional fully-connected layers to the Xception model. From the results it was clear that using a smaller amount of layers yielded a better score: with 5 layers, the Kaggle test score was 0.14, while higher than 0.19 with the others. The loss and accuracy of the best model (score 0.199) over the training epochs is shown on the figure below. 
+Three models were tested with 1-grams: with 3, 4 or 5 additional fully-connected layers to the Xception model. From the results it was clear that using a smaller amount of layers yielded a better score: with 5 layers, the Kaggle test score was 0.14, while higher than 0.19 with the others. The loss and accuracy of the best model (score 0.199) over the training epochs is shown on the figure below. 
 
 ![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/tf-idf-test3.png)
 
