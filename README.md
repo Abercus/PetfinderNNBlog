@@ -426,5 +426,11 @@ These encoding techniques provide countless possibilities to generate datasets a
 
 ## Conclusions
 
+## Contributions
+All of the authors contributed to the writing of this blog post. Everyone had discussions on which different methods to try and attempt. 
+In addition, Priit created and tested Images CNN model, which used transfer learning and auxiliary input and tested various parameters and hyperparameters. Also the ImagesCNN with pre-trained word embeddings were created and tested by Priit Paluoja.
+Mari Liis tested baseline models and neural networks with varying hyperparameters using image data, TF-IDF data and data generated with the different encoding methods.
+Joonas started out with data exploration, visualization and similarly worked with some baseline modeling for comparison with neural models. Worked with adding sentiment analysis results as features. Additionally applied a different version of TF-IDF features extraction, searched hyperparameters and trained an XGBoost model.
+
 
 
