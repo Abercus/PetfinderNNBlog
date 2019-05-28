@@ -10,7 +10,7 @@ PetFinder.my provides 14,993 samples for training, where each sample has 24 feat
 
 ![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/00c19f4fa-1.jpg)
 
-Image 1. Example of the case, where one image file has multiple images of the animal.
+**Image 1. Example of the case, where one image file has multiple images of the animal.**
 
 Provided by the competition holder are following files: 
 - _train.csv_ - consists of training data, this is the set of data with target labels, which we can use to train our models on;
@@ -64,13 +64,13 @@ To better know what’s going on in the data, we performed visualized the distri
   <img src="pics_blog/adoption_1.png" width="400" /> 
 </p>
 
-Figure 2. Distribution of target variable AdoptionSpeed.
+**Figure 2. Distribution of target variable AdoptionSpeed.**
 
 <p float="left">
   <img src="pics_blog/adoption_2.png" width="400" /> 
 </p>
 
-Figure 3. Average number of pets adopted per day within timeframe.
+**Figure 3. Average number of pets adopted per day within timeframe.**
 
 Plotted on Figure 3 is the number of pets adopted per day timeframes. By dividing the number of pets with the size of timeframe (number of days), we can find how many pets were adopted on average on each day. We note that most adoptions happen during the first week of the listing. As time goes on, the number of adoptions per day gets lower.
 
@@ -80,7 +80,8 @@ Plotted on Figure 3 is the number of pets adopted per day timeframes. By dividin
   <img src="pics_blog/type_2.png" width="400" /> 
   <img src="pics_blog/type_1.png" width="400" />
 </p>
-Figure 4. Distributions of AdoptionSpeeds for dogs and cats separately and Figure 5. Counts of dogs (1) and cats (2) within the training dataset.
+
+**Figure 4. Distributions of AdoptionSpeeds for dogs and cats separately and Figure 5. Counts of dogs (1) and cats (2) within the training dataset.**
 
 
 Plotted on Figure 4 are normalized distributions of the target label counts for dogs (1) and cats (2), where we can see that cats are more likely to be adopted and are adopted earlier. Plotted on Figure 5  is the number of dogs and cats, we can see that the counts of dogs and cats are pretty close, with there being some more dogs than cats. 
@@ -90,7 +91,7 @@ Plotted on Figure 4 are normalized distributions of the target label counts for 
   <img src="pics_blog/sterilized_2.png" width="400" /> 
 </p>
 
-Figure 6. Distributions of AdoptionSpeeds and counts of Sterilization status. 1 is spayed / neutered, 2 is not spayed/neutered and 3 means unsure. 
+**Figure 6. Distributions of AdoptionSpeeds and counts of Sterilization status. 1 is spayed / neutered, 2 is not spayed/neutered and 3 means unsure.**
 
 We can see, that most of the pets are listed as not sterilized, which can be due to costs and additional work needed to be done. From data, oddly enough, it seems that the the non-spayed pets have higher adoption rate compared to sterilized ones.
 
@@ -100,7 +101,7 @@ We can see, that most of the pets are listed as not sterilized, which can be due
   <img src="pics_blog/maturitysize_2.png" width="400" /> 
 </p>
 
-Figure 7. Feature MaturitySize: 1 - small, 2 - medium, 3 - large, 4 - extra large
+**Figure 7. Feature MaturitySize: 1 - small, 2 - medium, 3 - large, 4 - extra large**
 
 On Figure 7 is plotted the distributions for MaturitySize. We note that most of the pets are medium size and and almost none are extra large. From the distributions, we can note that people prefer to adopt either small or extra large pets, with medium and large being more neglected.
 
@@ -110,7 +111,7 @@ On Figure 7 is plotted the distributions for MaturitySize. We note that most of 
 </p>
 
 
-Figure 8. Feature FurLength: 1 - short, 2 - medium, 3 - long, 4 - not specified. 
+**Figure 8. Feature FurLength: 1 - short, 2 - medium, 3 - long, 4 - not specified.**
 
 On Figure 8 is plotted the distributions for feature FurLength. We note that most pets have short fur and least with long fur. From the distributions of AdoptionSpeed we note that people prefer pets with long fur. Medium fur pets are slightly more adopted compared to short fur. There were no pets with unspecified fur length within the data set.  
 
@@ -119,7 +120,7 @@ On Figure 8 is plotted the distributions for feature FurLength. We note that mos
   <img src="pics_blog/gender_2.png" width="400" /> 
 </p>
 
-Figure 9. Feature Gender: 1- Male, 2 - Female, 3 - Mixed
+**Figure 9. Feature Gender: 1- Male, 2 - Female, 3 - Mixed**
 
 Figure 9 plots the distribution of gender (right) and adoption speed distributions per gender (left). In the training data, there are more female than male dogs. Looking at the distribution of adoption speeds we can see that male pets are slightly more preferred to female pets.
 
@@ -127,7 +128,8 @@ Figure 9 plots the distribution of gender (right) and adoption speed distributio
   <img src="pics_blog/health_1.png" width="400" />
   <img src="pics_blog/health_2.png" width="400" /> 
 </p>
-Figure 10. Feature Health: 1 - Healthy, 2 - minor injuries, 3 - major injuries.
+
+**Figure 10. Feature Health: 1 - Healthy, 2 - minor injuries, 3 - major injuries.**
 
 Figure 10 plots the distribution of health status (right) and adoption speed distributions per health status (left). We note that most of the pets in the data set are healthy (1), with few having minor injuries (2) and only small with major injuries. We can note, that injured pets are less likely to be adopted.
 
@@ -135,7 +137,8 @@ Figure 10 plots the distribution of health status (right) and adoption speed dis
   <img src="pics_blog/dewormed_1.png" width="400" />
   <img src="pics_blog/dewormed_2.png" width="400" /> 
 </p>
-Figure 11. Feature dewormed: 1 - dewormed, 2 - not dewormed, 3 - not specified
+
+**Figure 11. Feature dewormed: 1 - dewormed, 2 - not dewormed, 3 - not specified**
 
 Figure 11 plots the distribution of pet being dewormed (right) and adoption speed distributions for each dewormed status. Most of the pets are dewormed (1), but there is also plenty which are either not dewormed (2) or not specified (3). In here we note that pets without specific status are less likely to be adopted. 
 
@@ -143,28 +146,32 @@ Figure 11 plots the distribution of pet being dewormed (right) and adoption spee
   <img src="pics_blog/vaccinated_1.png" width="400" />
   <img src="pics_blog/vaccinated_2.png" width="400" /> 
 </p>
-Figure 12. Feature vaccinated: 1 - vaccinated, 2 - unvaccinated, 3 - not specified
+
+**Figure 12. Feature vaccinated: 1 - vaccinated, 2 - unvaccinated, 3 - not specified**
 
 Figure 12 plots the distribution of pet being vaccinated (right), unvaccinated or not specified. Oddly enough, we note that people are more likely to adopt unvaccinated pets
 
 <p float="left">
   <img src="pics_blog/state_1.png" width="400" />
 </p>
-Figure 13. Feature state.
+
+**Figure 13. Feature state.**
 
 On Figure 13 we can see that most of the listings are done in one of two different states. 
 
 <p float="left">
   <img src="pics_blog/age.png" width="400" />
 </p>
-Figure 14. Feature Age.
+
+**Figure 14. Feature Age.**
 
 Looking at the age distribution plotted on Figure 14, we can see, that most of the pets are really young (0-5 months).
 
 <p float="left">
   <img src="pics_blog/fee.png" width="400" />
 </p>
-Figure 15. Feature Fee.
+
+**Figure 15. Feature Fee.**
 
 On Figure 15 we can see that most of the pets are do not have any fee.
 
@@ -265,7 +272,7 @@ The merged layer is further followed by two hidden layers. Final hidden layer of
 
 ![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/imagesCNN2.png)
 
-Figure. ImageCNN architecture
+**Figure 16. ImageCNN architecture**
 
 **ImageCNN code**
 
@@ -335,7 +342,7 @@ Although this score was achieved with four runs, we have tested it on more than 
 
 ![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/cnnfig1.jpg)
 
-Figure. Images CNN training time loss and accuracy change.It can be seen that on the fourth epoch (third, if counting from 0), loss starts to increase on validation set.
+**Figure 17. Images CNN training time loss and accuracy change. It can be seen that on the fourth epoch (third, if counting from 0), loss starts to increase on validation set.**
 
 ### Images CNN + Pre-Trained Word Embeddings
 Images CNN with pre-trained word embeddings was trained for 10 + 4 epochs. Kappa on training data was 0.485 and on test 0.203. Accuracy was 0.531 and 0.348 on training and test data. Kaggle evaluation returned us the kappa score of 0.159. It is interesting that adding more features returned 69% lower kappa than Images CNN without pre-trained word embeddings. 
@@ -344,7 +351,7 @@ Maybe if one would remove used stop words use other natural language processing 
 
 ![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/cnnfig2.jpg)
 
-Figure. Images CNN + pre-trained word embeddings loss and accuracy during different epochs. It can be seen that while on training data loss is decreasing and accuracy increasing, on the validation set, everything is the opposite. This is a sign of overfitting.
+**Figure 18. Images CNN + pre-trained word embeddings loss and accuracy during different epochs. It can be seen that while on training data loss is decreasing and accuracy increasing, on the validation set, everything is the opposite. This is a sign of overfitting.**
 
 ### Random Forest classifier (RFC) 
 With number of estimators being 70, random forest return kappa score of 0.33 on test set and accuracy of 0.99 and 0.40 on training and test set. With number of estimators being 65 and max depth of 15, Kaggle kappa score was 0.214. 
