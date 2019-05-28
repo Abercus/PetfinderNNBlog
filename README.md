@@ -1,4 +1,5 @@
 # PetFinder.my Adoption Prediction
+Mari Liis Velner, Priit Paluoja, Joonas Puura
 ## Introduction
 
 This blog post introduces our team’s solution to the Neural Networks (LTAT.02.001) project, which is based on the Kaggle competition [“PetFinder.my Adoption Prediction”](https://www.kaggle.com/c/petfinder-adoption-prediction). The project’s goal is to predict how fast the pet is adopted (if adopted at all), using the data from the Malaysian animal welfare platform PetFinder.my. The dataset includes the general data (the pet’s size, color, breed, name, etc), the images, image metadata (supplementary information for the images from Google’s Vision API analysis), and the sentiment analysis (from Google’s Natural Language API analysis for pet descriptions). The required output for the model is a categorical label from 0-4. The submissions for the contest are graded by making use of quadratic weighted kappa, which measures agreement between two raters - 0 if there is no agreement at all and 1 if there is complete agreement between raters.
