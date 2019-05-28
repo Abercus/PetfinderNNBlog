@@ -168,11 +168,13 @@ Figure 15. Feature Fee.
 
 On Figure 15 we can see that most of the pets are do not have any fee.
 
-Looking at the average fee for each class, we can see that there is not much of a difference:
+By looking at the average fee for each class, we can see that there is not much of a between classes:
 
 AdpSpeed | 0 | 1 | 2 | 3 | 4 
 -----|-----|-----|-----|-----|----- 
 Avg Fee |22.086|21.822|21.582|20.151|21.315 
+
+In general, we could say, that no single feature is specific to a certain AdoptionSpeed, and that there is a need to look at a mix of features when building models. 
 
 ## Baseline modeling
 To evaluate how useful our neural networks are, we compared them to some baseline models, namely the **Random Forest classifier** (RFC), **Extreme Gradient Boosting** (XGB) and **Gaussian Naïve Bayes** (GNB). RFC was selected because of its speed and good performance in many machine learning tasks, similary XGB has shown to be really performant in many tasks (especially on Kaggle), while GNB is a good probabilistic baseline for...  RFC performed the best on the raw … data and thus, was selected as the baseline method for further tests. 
