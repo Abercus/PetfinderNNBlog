@@ -11,6 +11,10 @@ The first step is to try and understand the data we are working with. For this w
 
 PetFinder.my provides 14,993 samples for training, where each sample has 24 features + n images (depict a dog or a cat) + metadata + sentiment info. There are a total of 58,311 images per training set, where some images (see Image 1) illustrate multiple animals.
 
+_"Nibble is a 3+ month old ball of cuteness. He is energetic and playful. I rescued a couple of cats a few months ago but could not get them neutered in time as the clinic was fully scheduled. The result was this little kitty. I do not have enough space and funds to care for more cats in my household. Looking for responsible people to take over Nibble's care."_
+
+
+
 ![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/00c19f4fa-1.jpg)
 
 **Image 1. Example of the case, where one image file has multiple images of the animal.**
