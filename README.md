@@ -62,7 +62,7 @@ For images, the contest provides output data from running all the images through
 From the features within _train.csv_, we found that there were 1257 missing values for _Name_ and 12 missing values for _Description_.
 
 ### Investigating feature distributions
-To better know what’s going on in the data, we performed visualized the distributions of features. We plot the distribution of the features individually and then also look at the distributions by _AdoptionSpeed_ (target). On Figure 2 is plotted the target variable _AdoptionSpeed_.  We first note, that the class of pets adopted within the day of listing is considerably smaller (under 500) compared to every other class (over 3000 to 4200). 
+To better know what’s going on in the data, we visualized the distributions of features. We plot the distribution of the features individually and then also look at the distributions by _AdoptionSpeed_ (target). On Figure 2 is plotted the target variable _AdoptionSpeed_.  We first note, that the class of pets adopted within the day of listing is considerably smaller (under 500) compared to every other class (over 3000 to 4200). 
 
 <p float="left">
   <img src="pics_blog/adoption_1.png" width="400" /> 
@@ -203,8 +203,8 @@ TF-IDF is a metric to evaluate the significance of a word in some document which
 The intention is to use this metric to determine the most important words in the pet descriptions for every adoption speed category. If there even exists a small set of words that represent a specific category, it could provide useful information to help differentiate the samples of different categories.
 
 There are different variants of the formula, the ones used in this project are the following:
-….
-https://nlp.stanford.edu/IR-book/html/htmledition/maximum-tf-normalization-1.html and https://skymind.ai/wiki/bagofwords-tf-idf
+![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/tf-formula.PNG)
+![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/idf-formula.PNG)
 
 The normalized variant of the TF formula was used with K = 0.5. 
 In this case, a document comprised all of the descriptions in the given category (adoption speed) and thus there were altogether 5 documents. The TF-IDF score was calculated for every word in a document to determine the words that best describe each adoption speed. To ease the process, different preprocessing methods were applied to the texts, including lemmatization and name extraction (i.e. eliminating names from texts). 
@@ -380,7 +380,6 @@ On Kaggle, the submission got a Kappa result of **0.29109**.
 
 
 ### Images CNN + TF-IDF
-...
 The following image depicts word clouds for the description of the five adoption speed classes. 
 
 ![Image](https://raw.githubusercontent.com/Abercus/PetfinderNNBlog/master/wordclouds.png)
