@@ -244,7 +244,7 @@ Several new features were generated from the raw data to extract information tha
 
 ## Network architectures
 ### [Images CNN](https://github.com/PriitPaluoja/PetFinderNN/blob/master/ImagesCNN.ipynb)
-Images CNN uses transfer learning. Pre-trained [Xception](https://arxiv.org/abs/1610.02357) model is used with  ImageNet weights. All layers except last 3 layers of the Xception  model are frozen during training. Auxiliary input from training.csv and sentiments is given and sent through 4 hidden layers and merged (merged layer) with the output of the Xception.
+Images CNN uses transfer learning. Pre-trained [Xception](https://arxiv.org/abs/1610.02357) model is used with  ImageNet [weights](https://keras.io/applications/#xception). All layers except last 3 layers of the Xception  model are frozen during training. Auxiliary input from training.csv and sentiments is given and sent through 4 hidden layers and merged (merged layer) with the output of the Xception.
 
 The following features are given from auxiliary input:
 - “Type”
