@@ -188,11 +188,11 @@ Avg Fee |22.086|21.822|21.582|20.151|21.315
 In general, we could say, that no single feature is specific to a certain AdoptionSpeed, and that there is a need to look at a mix of features when building models. 
 
 ## Baseline modeling
-To evaluate how useful our neural networks are, we compared them to some baseline models, namely the **Random Forest classifier** (RFC), **Extreme Gradient Boosting** (XGB) and **Gaussian Naïve Bayes** (GNB). RFC was selected because of its speed and good performance in many machine learning tasks, similary XGB has shown to be really performant in many tasks (especially on Kaggle), while GNB is a good probabilistic baseline for...  RFC performed the best on the raw … data and thus, was selected as the baseline method for further tests. 
+To evaluate how useful our neural networks are, we compared them to some baseline models, namely the **Random Forest classifier** (RFC), **Extreme Gradient Boosting** (XGB) and **Gaussian Naïve Bayes** (GNB). RFC was selected because of its speed and good performance in many machine learning tasks, similary XGB has shown to be really performant in many tasks (especially on Kaggle), while GNB is a good probabilistic baseline. RFC performed the best on the initial data and thus, was selected as the baseline method for further tests. 
 
 The sklearn implementations of both methods were used in this project. We tested various values of the _n_estimators_ and _max_depth_ parameters, the first specifying the number of trees in the forest and the second setting the maximum depth of a tree in the forest. According to the test cohen-kappa score, accuracy and cross-validation accuracy we found the best _n_estimators_ to be 60 and _max_depth_ 15. These are kept constant through the rest of the project. 
 
-In addition, we ran the data through the **SelectKBest** method before applying RFC, testing if feature selection would significantly improve the scores on … data so that we could eliminate some redundant features immediately. In the end, testing different _k_ values and scoring functions did not give notable differences in the results and thus only the RFC model was kept from the pipeline.
+In addition, we ran the data through the **SelectKBest** method before applying RFC, testing if feature selection would significantly improve the scores on initial data so that we could eliminate some redundant features immediately. In the end, testing different _k_ values and scoring functions did not give notable differences in the results and thus only the RFC model was kept from the pipeline.
 
 ## Feature engineering
 From our initial tests it quickly became clear that only using some basic techniques like normalization and one-hot-encoding would not give us good results. Therefore, we implemented various feature engineering methods to extract more useful information from the given data.
@@ -241,7 +241,7 @@ Numerical data can either be normalized or **binned** to some intervals, which h
 Several new features were generated from the raw data to extract information that could be important to the classifier. These features are listed below.
 1. **The number of colors**. For each pet we calculate the number of colors in their fur. 
 2. **The number of breeds**. The number of breeds are calculated for every pet.
-3. **Is the given state popular**. There were two Malaysian states in the dataset (namely ...) where most of the pets were adopted from. This feature is boolean, the value True indicating that the sample’s state is either of the two popular states and False indicating otherwise.
+3. **Is the given state popular**. There were two Malaysian states in the dataset where most of the pets were adopted from. This feature is boolean, the value True indicating that the sample’s state is either of the two popular states and False indicating otherwise.
 
 ## Network architectures
 ### [Images CNN](https://github.com/PriitPaluoja/PetFinderNN/blob/master/ImagesCNN.ipynb)
