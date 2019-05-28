@@ -427,7 +427,9 @@ These encoding techniques provide countless possibilities to generate datasets a
 ## Conclusions
 The Kaggle challenge addressed in this blog post is complex. It is complex due to the number of features available, noise in the data (some images contain multiple images), available data containing natural language, images, nominal data and categorical data. Furthermore, Kaggle top quadratic weighted kappa scores on the [leaderboard](https://www.kaggle.com/c/petfinder-adoption-prediction/leaderboard) were under 0.47.
 
-Due to neural networks taking a long time to learn (and easy to overfit), we were not able to test as many hyperparameter and layer combinations as we would have wanted to. Nevertheless, even with these difficulties and without complex feature extraction and engineering we achieved a Kappa score of  0.21 with Random Forest Classifier, 0.23 with Images CNN and 0.29 with Xgboost, when submitting to Kaggle. 
+We started with feature engineering and exploratory data analysis, followed by testing of different neural networks and and non-neural models.
+
+Due to neural networks taking a long time to learn (and easy to overfit), we were not able to test as many hyperparameter and layer combinations as we would have wanted to. Nevertheless, even with these difficulties and without complex feature extraction and engineering we achieved a Kappa score of 0.21 with Random Forest Classifier, 0.23 with Images CNN (transfer learning) and 0.29 with Xgboost, when submitting to Kaggle. 
 
 
 ## Contributions
