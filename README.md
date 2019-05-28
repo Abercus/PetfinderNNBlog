@@ -18,7 +18,8 @@ Provided by the competition holder are following files:
 - _train.csv_ - consists of training data, this is the set of data with target labels, which we can use to train our models on;
 - _test.csv_ - consists of test data, without target label, this will be used for Kaggle submission;
 - Image metadata files - set of json files, with output of image analysis provided by the contest holder; 
-- Sentiment data files - set of json files, with output of sentiment analysis on _Description_ field.
+- Sentiment data files - set of json files, with output of sentiment analysis on _Description_ field;
+- Image files - image files for each of the listing, based on which the image analysis was performed.
 
 
 Additionally there are files to map integer values within _train.csv_ which represent categories to strings: _breed_labels.csv_ (BreedId to a name of the breed), _color_labels.csv_ (color id to a color), _state_labels.csv_ (state id to a state). 
